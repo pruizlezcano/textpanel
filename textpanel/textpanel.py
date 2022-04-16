@@ -54,24 +54,24 @@ def panel(text: str, border_style: any = "round",
     if title:
         len_title = len(_ansi_escape(title))
         if title_alignment == "left":
-            top_line = chars["top"] * (padding-len(WS)) + WS + title + WS + \
-                chars["top"] * (max_line_len + 2 - len_title -
-                                len(WS)*2 + padding)
+            top_line = chars["top"] * (1-len(WS)) + WS + title + WS + \
+                chars["top"] * (max_line_len - len_title -
+                                len(WS)*2 + 2)
         elif title_alignment == "right":
-            top_line = chars["top"] * (max_line_len + 2 - len_title -
-                                       len(WS)*2 + padding) + WS + title + WS + \
-                chars["top"] * (padding-len(WS))
+            top_line = chars["top"] * (max_line_len - len_title -
+                                       len(WS)*2 + 2) + WS + title + WS + \
+                chars["top"] * (1-len(WS))
         elif title_alignment == "center":
-            max_chars = max_line_len + 2 + padding*2
+            max_chars = max_line_len + 1*2
             half_chars = floor((max_chars - len_title - len(WS)*2)/2)
             top_line = chars["top"] * half_chars + WS + title + WS + \
                 chars["top"] * (max_chars-half_chars-len(WS) * 2-len_title)
     else:
-        top_line = chars["top"] * (max_line_len + 2 + padding*2)
+        top_line = chars["top"] * (max_line_len + 1*2)
 
     top_bar = colors[border_color] + horizontal_margin + chars["topLeft"] + \
         top_line + chars["topRight"] + colors["reset"]
-    bottom_line = chars["bottom"] * (max_line_len + 2 + padding*2)
+    bottom_line = chars["bottom"] * (max_line_len + 1*2)
     bottom_bar = colors[border_color] + horizontal_margin + chars["bottomLeft"] + \
         bottom_line + chars["bottomRight"] + colors["reset"]
 

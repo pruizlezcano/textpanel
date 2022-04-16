@@ -15,7 +15,7 @@ URL = 'https://github.com/pruizlezcano/textpanel'
 EMAIL = 'pruizlezcano@gmail.com'
 AUTHOR = 'Pablo Ruiz'
 REQUIRES_PYTHON = '>=3.0.0'
-VERSION = '1.0.0'
+VERSION = '1.0.1'
 
 REQUIRED = [
 ]
